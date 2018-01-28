@@ -3,7 +3,7 @@
 <head>Form</head>
 
 <body>
-    <form action="/signup" method="POST">
+    <form name="myForm">
         <input type="text" placeholder="username" name="username" required><br>
         <input type="password" placeholder="password" name="pass" required><br>
         <input type="text" placeholder="name" name="name" required><br>
@@ -11,9 +11,24 @@
         <input type="number" placeholder="mobile" name="mobile" required><br>
         <input type="date" placeholder="birthday" name="birthdate" required><br>
         <input type="text" placeholder="city" name="city" required><br>
-        <button type="submit">Signup</button><br>
-
+        <a href="#myForm" id="signup-btn" name="signup-btn">Signup</a><br>
+        <script>
+            $('#signup-btn').bind('click', function() {
+                var formData = JSON.stringify($("#myForm").serializeArray());
+                $.ajax({
+                    type: "POST",
+                    url: "/signup",
+                    data: formData,
+                    success: function() {},
+                    dataType: "json",
+                    contentType: "application/json"
+                });
+            });
+        </script>
     </form>
+
+    <!-- <div id=myg name=myg>
+    </div> -->
 </body>
 
 </html>
