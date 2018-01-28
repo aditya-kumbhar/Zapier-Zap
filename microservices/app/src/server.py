@@ -1,13 +1,91 @@
 from src import app
-# from flask import jsonify
+from flask import Flask, render_template, request
+import requests
+import json
 
 
 @app.route("/")
-def home():
-    return "Hasura Hello World"
+def index():
+    return render_template("index.html")
 
-# Uncomment to add a new URL at /new
+@app.route("/signup", methods = ['GET','POST'])
+def signup():
+    url = "https://auth.alarmist27.hasura-app.io/v1/signup"
+    name = request.form['name']
+    username = request.form['username']
+    password = request.form['pass']
+    email = request.form['email']
+    mobile = request.form['mobile']
+    city = request.form['city']
+    birthdate = request.form['birthdate']
+    
+    # This is the json payload for the query
+    requestPayload = {
+        "provider": "username",
+        "data": {
+            "username": username,
+            "password": password
+        }
+    }
 
-# @app.route("/json")
-# def json_message():
-#     return jsonify(message="Hello World")
+    # Setting headers
+    headers = {
+        "Content-Type": "application/json"
+    }
+
+    # Make the query and store response in resp
+    resp = requests.request("POST", url, data=json.dumps(requestPayload), headers=headers)
+    resp = json.loads(resp.content)     # resp.content contains the json response.
+    if 'hasura_id' in resp.keys():
+        #signup success. insert data in users table
+        # This is the url to which the query is made
+        url = "https://data.alarmist27.hasura-app.io/v1/query"
+        
+        hasura_id = resp['hasura_id']
+        # This is the json payload for the query
+        requestPayload = {
+            "type": "insert",
+            "args": {
+                "table": "users",
+                "objects": [
+                    {
+                        "name"  :name,
+                        "birthdate" :birthdate ,
+                        "hasura_id" :hasura_id ,
+                        "username" :username ,
+                        "password" :password ,
+                        "email" :email ,
+                        "mobile" :mobile ,
+                        "city" :city
+                        }
+                ]
+            }
+        }
+
+        # Setting headers
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer e83406560e00f4cf3037e9bc6a47e6f2a4e6fbf3063bbc8c"
+        }
+
+        # Make the query and store response in resp
+        queryResp = requests.request("POST", url, data=json.dumps(requestPayload), headers=headers)
+
+        # resp.content contains the json response.
+        print(queryResp.content)
+        zapPostURL = 'https://hooks.zapier.com/hooks/catch/2907826/8vw21h/'
+        zapPayLoad =  {
+                        "name" :name,
+                        "birthdate" :birthdate ,
+                        "username" :username ,
+                        "email" :email ,
+                        "mobile" :mobile ,
+                        "city" :city
+                        }
+        zapResp = requests.request("POST",zapPostURL, data = json.dumps(zapPayLoad))
+        return 'OK'
+    else:
+        ans = resp['code']+" "+resp['message']  
+        return ans
+    
+    print(resp)
