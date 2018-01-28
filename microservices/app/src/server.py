@@ -64,8 +64,8 @@ def signup():
 
         # Setting headers
         headers = {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer e83406560e00f4cf3037e9bc6a47e6f2a4e6fbf3063bbc8c"
+        "Content-Type": "application/json",
+        "Authorization": "Bearer 8fed092aefc106fb907c6061de133b15a1e95c6310ec79c2"
         }
 
         # Make the query and store response in resp
