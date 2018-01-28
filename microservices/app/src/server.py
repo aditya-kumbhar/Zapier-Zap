@@ -10,7 +10,7 @@ def index():
 
 @app.route("/signup", methods = ['GET','POST'])
 def signup():
-    url = "https://auth.alarmist27.hasura-app.io/v1/signup"
+    url = "https://auth.asthmatic70.hasura-app.io/v1/signup"
     name = request.form['name']
     username = request.form['username']
     password = request.form['pass']
@@ -39,7 +39,7 @@ def signup():
     if 'hasura_id' in resp.keys():
         #signup success. insert data in users table
         # This is the url to which the query is made
-        url = "https://data.alarmist27.hasura-app.io/v1/query"
+        url = "https://data.asthmatic70.hasura-app.io/v1/query"
         
         hasura_id = resp['hasura_id']
         # This is the json payload for the query
