@@ -174,10 +174,10 @@ app:
 
 ui:
   /:
-    corsPolicy: allow_all
     upstreamService:
       name: ui
       namespace: '{{ cluster.metadata.namespaces.user }}'
     upstreamServicePath: /
     upstreamServicePort: 80
+    corsPolicy: allow_all
 
