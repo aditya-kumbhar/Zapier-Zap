@@ -10,8 +10,9 @@ def index():
 
 @app.route("/signup", methods = ['POST'])
 def signup():
-    return request.get_json()
-
+    print(request.get_json())
+    return 'OK'
+    
 # @app.route("/signup", methods = ['GET','POST'])
 # def signup():
 #     url = "https://auth.asthmatic70.hasura-app.io/v1/signup"
