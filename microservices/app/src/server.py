@@ -24,7 +24,7 @@ def signup():
     username = user_info['username']
     password = user_info['password']
     email = user_info['email']
-    mobile = user_info['mobile']
+    mobile = user_info['phone']
     city = user_info['city']
     birthdate = user_info['dob']
     
