@@ -6,15 +6,8 @@ import json
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return 'The endpoint is at /signup'
 
-# @app.route("/signup", methods = ['POST'])
-# def signup():
-#     result = request.get_json(force=True)
-
-#     print(result['device'])
-#     return 'OK'
-    
 @app.route("/signup", methods = ['GET','POST'])
 def signup():
     url = "https://auth.asthmatic70.hasura-app.io/v1/signup"
