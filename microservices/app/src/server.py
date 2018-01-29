@@ -22,11 +22,11 @@ def signup():
     user_info = request.get_json(force=True)
     name = user_info['name']
     username = user_info['username']
-    password = user_info['pass']
+    password = user_info['password']
     email = user_info['email']
     mobile = user_info['mobile']
     city = user_info['city']
-    birthdate = user_info['birthdate']
+    birthdate = user_info['dob']
     
     # This is the json payload for the query
     requestPayload = {
