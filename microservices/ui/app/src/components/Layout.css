@@ -1,0 +1,5 @@
+.page__home {
+  text-align: center;
+  background: linear-gradient(to right, #22C2C3 , #37B9E9);
+  padding: 50px;
+}

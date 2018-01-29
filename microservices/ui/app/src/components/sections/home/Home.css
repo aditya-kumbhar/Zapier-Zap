@@ -1,0 +1,47 @@
+.page__section {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 40px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.page__section--home {
+  background-position: center;
+}
+
+.page__title {
+  font-weight: 700;
+  line-height: 1;
+  margin: 20px 0;
+  letter-spacing: 1px;
+}
+
+.page__section__icon {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 50px;
+  height: 50px;
+  background-image: url(../../../assets/img/book.png);
+  background-size: contain;
+  transition: all 300ms ease-in-out;
+}
+
+.page__section__icon:hover {
+  width: 70px;
+  height: 70px;
+}
+
+@media only screen and (max-width: 700px) {
+  .page__section__icon {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  page__section__icon:hover {
+    width: 60px;
+    height: 60px;
+  }
+}
