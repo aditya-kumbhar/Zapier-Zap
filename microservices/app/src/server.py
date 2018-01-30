@@ -1,5 +1,5 @@
 from src import app
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import requests
 import json
 
@@ -85,8 +85,8 @@ def signup():
                         "city" :city
                         }
         zapResp = requests.request("POST",zapPostURL, data = json.dumps(zapPayLoad))
-        return 'Signup Successful.'
+        return jsonify(result= 'Signup Successful.')
     else:
         ans = resp['code']+" "+resp['message']  
-        return ans
+        return jsonify(result = ans)
     
