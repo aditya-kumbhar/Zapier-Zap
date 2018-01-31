@@ -1,0 +1,16 @@
+.signup-form {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.signup-form-button {
+  width: 100%;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.date-picker {
+  width: 100%;
+}
