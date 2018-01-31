@@ -19,7 +19,7 @@ items:
           app: ui
       spec:
         containers:
-        - image: hasura/hello-world:latest
+        - image: hasura/base-git-image:0.7
           imagePullPolicy: IfNotPresent
           name: ui
           ports:
