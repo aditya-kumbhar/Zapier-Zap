@@ -17,7 +17,7 @@ class Signup extends Component {
         };
         delete values["date-picker"];
         // Update the first parameter of axios.post() with the webhook URL of our cluster
-        axios.post('https://app.asthmatic70.hasura-app.io/signup', JSON.stringify(values)).then(response => {            alert("The server says: " + JSON.stringify(response));
+        axios.post('https://app.asthmatic70.hasura-app.io/signup', JSON.stringify(values)).then(response => {   alert("The server says: " + JSON.stringify(response));
       });       
       }
     });
