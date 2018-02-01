@@ -182,3 +182,14 @@ ui:
     upstreamServicePort: 80
 
 
+
+www:
+  /:
+    corsPolicy: allow_all
+    upstreamService:
+      name: www
+      namespace: '{{ cluster.metadata.namespaces.user }}'
+    upstreamServicePath: /
+    upstreamServicePort: 80
+
+
