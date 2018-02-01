@@ -30,7 +30,7 @@ class Signup extends Component {
         <FormItem>
           {getFieldDecorator("name", {
             rules: [{ required: true, message: "Please input your Name!" }]
-          })(<Input placeholder="Name" />)}
+          })(<Input placeholder="Your name" />)}
         </FormItem>
         <FormItem>
           {getFieldDecorator("username", {
