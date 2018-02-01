@@ -85,8 +85,8 @@ def signup():
                         "city" :city
                         }
         zapResp = requests.request("POST",zapPostURL, data = json.dumps(zapPayLoad))
-        return jsonify(result= 'Signup Successful.')
+        return jsonify(result= 'Signup Successful.', code='true')
     else:
         ans = resp['message']  
-        return jsonify(result = ans)
+        return jsonify(result = ans, code='false')
     
