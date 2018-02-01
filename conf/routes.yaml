@@ -171,14 +171,3 @@ app:
     corsPolicy: allow_all
 
 # To see actual endpoints for these routes, use `$ hasura microserivce list`
-
-www:
-  /:
-    corsPolicy: allow_all
-    upstreamService:
-      name: www
-      namespace: '{{ cluster.metadata.namespaces.user }}'
-    upstreamServicePath: /
-    upstreamServicePort: 80
-
-
