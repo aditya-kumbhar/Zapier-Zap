@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "antd/dist/antd.css";
-import "./Signup.css";
 import axios from "axios";
+
+import "./Signup.css";
 import { Form, Icon, Input, Button, Checkbox, DatePicker } from "antd";
 const FormItem = Form.Item;
 
@@ -12,18 +13,19 @@ class Signup extends Component {
       if (!err) {
         const values = {
           ...fieldsValue,
-          DOB: fieldsValue["date-picker"].format("YYYY-MM-DD")
+          dob: fieldsValue["date-picker"].format("YYYY-MM-DD")
         };
         delete values["date-picker"];
         // Update the first parameter of axios.post() with the webhook URL of our cluster
-        axios.post('/signup', JSON.stringify(values)).then(response => {console.log(response);});       
-        console.log("Received values of form: ", values);
+        axios.post('https://app.asthmatic70.hasura-app.io/signup', JSON.stringify(values)).then(response => {            alert("The server says: " + JSON.stringify(response));
+      });       
       }
     });
   };
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
+<div>
       <Form onSubmit={this.handleSubmit} className="signup-form">
         <FormItem>
           {getFieldDecorator("name", {
@@ -84,6 +86,8 @@ class Signup extends Component {
           Or <a href="">Sign in</a>
         </FormItem>
       </Form>
+      <div id="response"></div>
+</div>
     );
   }
 }
