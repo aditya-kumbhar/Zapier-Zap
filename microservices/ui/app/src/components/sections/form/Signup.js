@@ -95,7 +95,7 @@ else          {
           {getFieldDecorator("phone", {
             rules: [
               { required: true, message: "Please input your Contact no!" },
-              {min: 8, message: "Minimum length is 8 digits"}
+              {min: 10, message: "Minimum length is 10 digits"}
             ]
           })(<Input type="number" placeholder="Phone" />)}
         </FormItem>
