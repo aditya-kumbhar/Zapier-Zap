@@ -17,8 +17,29 @@ class Signup extends Component {
         };
         delete values["date-picker"];
         // Update the first parameter of axios.post() with the webhook URL of our cluster
-        axios.post('https://app.asthmatic70.hasura-app.io/signup', JSON.stringify(values)).then(response => {   alert("The server says: " + JSON.stringify(response));
-      });       
+        axios.post('https://app.asthmatic70.hasura-app.io/signup', JSON.stringify(values))
+        .then(response => {         
+          console.log(response);  
+ 
+          if(response.data.code=="true")
+          {document.getElementById("response").innerHTML="Sign Up Successful!"
+          document.getElementById("response").style.color = "green";
+         this.props.form.resetFields();
+        }
+else          {
+  document.getElementById("response").innerHTML="Sign Up Failed!" + '<br>' + response.data.result;
+  document.getElementById("response").style.color = "red";
+  document.getElementById("username").focus() ;
+
+          this.props.form.setFields({
+            username: {
+              value: values.username,
+              errors: [new Error('Enter a unique username! ')],
+            },
+          });
+}
+
+        });       
       }
     });
   };
@@ -26,13 +47,13 @@ class Signup extends Component {
     const { getFieldDecorator } = this.props.form;
     return (
 <div>
-      <Form onSubmit={this.handleSubmit} className="signup-form">
+      <Form onSubmit={this.handleSubmit} className="signup-form">  
         <FormItem>
           {getFieldDecorator("name", {
             rules: [{ required: true, message: "Please input your Name!" }]
           })(<Input placeholder="Name" />)}
         </FormItem>
-        <FormItem>
+        <FormItem id="username">
           {getFieldDecorator("username", {
             rules: [{ required: true, message: "Please input your username!" }]
           })(<Input placeholder="Username" />)}
@@ -53,7 +74,9 @@ class Signup extends Component {
         </FormItem>
         <FormItem>
           {getFieldDecorator("password", {
-            rules: [{ required: true, message: "Please input your Password!" }]
+            rules: [{ required: true, message: "Please input your Password!" },
+            { min: 8, message: "Minimum password length is 8 characters" }
+          ]
           })(<Input type="password" placeholder="Password" />)}
         </FormItem>
         <FormItem>
@@ -71,9 +94,10 @@ class Signup extends Component {
         <FormItem>
           {getFieldDecorator("phone", {
             rules: [
-              { required: true, message: "Please input your Contact no!" }
+              { required: true, message: "Please input your Contact no!" },
+              {min: 8, message: "Minimum length is 8 digits"}
             ]
-          })(<Input type="tel" placeholder="Phone" />)}
+          })(<Input type="number" placeholder="Phone" />)}
         </FormItem>
         <FormItem>
           <Button

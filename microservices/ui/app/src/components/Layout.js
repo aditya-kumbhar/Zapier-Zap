@@ -7,7 +7,6 @@ class Layout extends Component {
   render() {
     return (
       <div className="page__home">
-        <Home />
         <Article />
       </div>
     );
