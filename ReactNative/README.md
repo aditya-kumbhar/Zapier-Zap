@@ -1,4 +1,4 @@
-# Zap_app  
+# ReactNative Zap-App
          A react-native app which stores User's Registration details on Hasura cluster DB and Google Spreadsheet and 
      notifies user along with the Google Spreadsheet link where Details are stored using Zapier Service.Backend is   
      done using Python-Flask.
