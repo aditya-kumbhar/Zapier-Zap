@@ -1,0 +1,7 @@
+- alias: hasura
+  config:
+    configmap: controller-conf
+    namespace: asthmatic70-hasura
+  data: null
+  kubeContext: asthmatic70
+  name: asthmatic70
