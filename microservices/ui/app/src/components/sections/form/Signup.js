@@ -76,6 +76,7 @@ else          {
           {getFieldDecorator("password", {
             rules: [{ required: true, message: "Please input your Password!" },
             { min: 8, message: "Minimum password length is 8 characters" }
+            
           ]
           })(<Input type="password" placeholder="Password" />)}
         </FormItem>
@@ -95,9 +96,11 @@ else          {
           {getFieldDecorator("phone", {
             rules: [
               { required: true, message: "Please input your Contact no!" },
-              {min: 10, message: "Minimum length is 10 digits"}
+              {min: 10, message: "Minimum length is 10 digits"},
+              { max: 10, message: "Maximum length is 10 digits" }
+
             ]
-          })(<Input type="number" placeholder="Phone" />)}
+          })(<Input type="number" min="0" placeholder="Phone" />)}
         </FormItem>
         <FormItem>
           <Button
