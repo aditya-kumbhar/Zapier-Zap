@@ -1,0 +1,15 @@
+- args:
+    permission:
+      columns:
+      - birthdate
+      - name
+      - hasura_id
+      - username
+      - password
+      - email
+      - mobile
+      - city
+      filter: {}
+    role: user
+    table: users
+  type: create_select_permission
