@@ -23,27 +23,57 @@ To see the app in action you can follow the instructions below:
 
 ![app screen](https://github.com/aditya-kumbhar/HPDF-T81-PF/blob/master/ReactJS%20+%20Python%20Flask/first.png?raw=true \"app screen\")
 
-## Tutorial\n \nFollow along for a step by step guide on developing this app
+## Tutorial
+
+
+ 
+
+
+Follow along for a step by step guide on developing this app
 
 ## Getting started
 
 ### Step 1 - Install create-react-app
 
-```sh\n$ npm install -g create-react-app\n```
+```sh
+
+
+$ npm install -g create-react-app
+
+
+```
 
 The above command will install create-react-app globaly which is a tool to Create React apps with no build configuration.
 
 ### Step 2 - Creating a basic project
 
-```sh\n$ create-react-app my-app\n$ cd my-app\n```
+```sh
+
+
+$ create-react-app my-app
+
+
+$ cd my-app
+
+
+```
 
 The above command does the following:
 
-1. Creates a new folder in the current working directory called `my-app`\n2. Populate the directory with the required files to get started with a react app
+1. Creates a new folder in the current working directory called `my-app`
+
+
+2. Populate the directory with the required files to get started with a react app
 
 ### Step 3 - Installing the Ant Design Framework
 
-```sh\n$ npm install antd --save\n```
+```sh
+
+
+$ npm install antd --save
+
+
+```
 
 This command will install ant design and save it to the `package.json` file.
 
@@ -53,8 +83,130 @@ To use some advance features provided by the ant design we need to configure it 
 
 ### Step 5 - Folder structure
 
-```\nmy-app\n├── README.md\n├── node_modules\n├── package.json\n├── .gitignore\n├── public\n│   └── favicon.ico\n│   └── index.html\n│   └── manifest.json\n└── src\n    └── App.css\n    └── App.js\n    └── App.test.js\n    └── index.css\n    └── index.js\n    └── logo.svg\n    └── registerServiceWorker.js\n    └── assets\n    │   └── css\n    │   │   └── normalize.css\n    │   └── img\n    │       └── logo.svg\n    │       └── bg.png\n    └── components\n        └── Layout.js\n        └── Layout.css\n        └── section\n            └── Article.js\n            └── Article.css\n            └── form\n            │   └── Signup.js\n            │   └── Signup.css\n            └── home\n                └── Home.js\n                └── Hoem.css\n```
+```
 
-* assets contains the required files like css reset, images used in the project etc.\n* component directory contains the layout and other components of the app\n* `Layout.js` define the structure of the web page\n* `Article.js` is serving as a container for the other components\n* `Signup.js` is the signup form 
 
-  ![Signup view](https://raw.githubusercontent.com/aditya-kumbhar/HPDF-T81-PF/master/ReactJS%20%2B%20Python%20Flask/second.png \"Signup view\")\n
+my-app
+
+
+├── README.md
+
+
+├── node_modules
+
+
+├── package.json
+
+
+├── .gitignore
+
+
+├── public
+
+
+│   └── favicon.ico
+
+
+│   └── index.html
+
+
+│   └── manifest.json
+
+
+└── src
+
+
+    └── App.css
+
+
+    └── App.js
+
+
+    └── App.test.js
+
+
+    └── index.css
+
+
+    └── index.js
+
+
+    └── logo.svg
+
+
+    └── registerServiceWorker.js
+
+
+    └── assets
+
+
+    │   └── css
+
+
+    │   │   └── normalize.css
+
+
+    │   └── img
+
+
+    │       └── logo.svg
+
+
+    │       └── bg.png
+
+
+    └── components
+
+
+        └── Layout.js
+
+
+        └── Layout.css
+
+
+        └── section
+
+
+            └── Article.js
+
+
+            └── Article.css
+
+
+            └── form
+
+
+            │   └── Signup.js
+
+
+            │   └── Signup.css
+
+
+            └── home
+
+
+                └── Home.js
+
+
+                └── Hoem.css
+
+
+```
+
+* assets contains the required files like css reset, images used in the project etc.
+
+
+* component directory contains the layout and other components of the app
+
+
+* `Layout.js` define the structure of the web page
+
+
+* `Article.js` is serving as a container for the other components
+
+
+* `Signup.js` is the signup form 
+
+  ![Signup view](https://raw.githubusercontent.com/aditya-kumbhar/HPDF-T81-PF/master/ReactJS%20%2B%20Python%20Flask/second.png \"Signup view\")
+
+
