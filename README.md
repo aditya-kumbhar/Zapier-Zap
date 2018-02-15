@@ -19,15 +19,11 @@ To store the user data in the google sheet we will use the Zapier webhook API pr
 
 To see the app in action you can follow the instructions below:
 
-* Navigate to `https:\u002F\u002Fui.asthmatic70.hasura-app.io\u002F#login` in your browser
+* Navigate to `https:\\ui.asthmatic70.hasura-app.io\#login` in your browser
 
-![app screen](https://github.com/aditya-kumbhar/HPDF-T81-PF/blob/master/ReactJS%20+%20Python%20Flask/first.png?raw=true \"app screen\")
+![app screen](https://github.com/aditya-kumbhar/HPDF-T81-PF/blob/master/ReactJS%20+%20Python%20Flask/first.png?raw=true "app screen")
 
 ## Tutorial
-
-
- 
-
 
 Follow along for a step by step guide on developing this app
 
@@ -207,6 +203,6 @@ my-app
 
 * `Signup.js` is the signup form 
 
-  ![Signup view](https://raw.githubusercontent.com/aditya-kumbhar/HPDF-T81-PF/master/ReactJS%20%2B%20Python%20Flask/second.png \"Signup view\")
+  ![Signup view](https://raw.githubusercontent.com/aditya-kumbhar/HPDF-T81-PF/master/ReactJS%20%2B%20Python%20Flask/second.png "Signup view")
 
 
