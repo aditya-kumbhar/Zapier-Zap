@@ -9,7 +9,7 @@ To store the user data in the google sheet we will use the Zapier webhook API pr
 
 ### Back-end
 
-** Before you begin, ensure that you have the latest version of the `hasura cli` installed. You can find instructions to download the `hasura cli` from [here](https:\u002F\u002Fdocs.hasura.io\u002F0.15\u002Fmanual\u002Finstall-hasura-cli.html)
+* Before you begin, ensure that you have the latest version of the `hasura cli` installed. You can find instructions to download the `hasura cli` from [here](https:\u002F\u002Fdocs.hasura.io\u002F0.15\u002Fmanual\u002Finstall-hasura-cli.html)
 
 ### Front-end
 
