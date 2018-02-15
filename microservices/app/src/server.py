@@ -10,7 +10,7 @@ def index():
 
 @app.route("/signup", methods = ['GET','POST'])
 def signup():
-    url = "https://auth.asthmatic70.hasura-app.io/v1/signup"
+    url = "https://auth.asthmatic70.hasura-app.io/v1/signup"        #replace this with your own cluster url
     
     user_info = request.get_json(force=True)
     name = user_info['name']
@@ -41,7 +41,7 @@ def signup():
     if 'hasura_id' in resp.keys():
         #signup success. insert data in users table
         # This is the url to which the query is made
-        url = "https://data.asthmatic70.hasura-app.io/v1/query"
+        url = "https://data.asthmatic70.hasura-app.io/v1/query"         #replace this with your own cluster url
         
         hasura_id = resp['hasura_id']
         # This is the json payload for the query
@@ -75,7 +75,7 @@ def signup():
 
         # resp.content contains the json response.
         print(queryResp.content)
-        zapPostURL = 'https://hooks.zapier.com/hooks/catch/2907826/8vw21h/'
+        zapPostURL = 'https://hooks.zapier.com/hooks/catch/2907826/8vw21h/'     #replace this with the zap webhook you create
         zapPayLoad =  {
                         "name" :name,
                         "birthdate" :birthdate ,
