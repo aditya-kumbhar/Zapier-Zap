@@ -129,7 +129,6 @@ Commit the changes and push the commit to deploy your project to your cluster.
 `git push hasura master`
 
 
-
 # Tutorial: React
 
 
@@ -286,9 +285,7 @@ Inside this file, look at the 20th line which calls the axios post function. The
 
 ```sh
 
-
 $ npm install antd --save
-
 
 ```
 
@@ -310,7 +307,7 @@ Reference APK Link: https://drive.google.com/folderview?id=1gZMLtFAaC0FSZbEw0mat
   * [NativeBase for UI Elements](https://github.com/GeekyAnts/NativeBase)
   * [React Native Datepicker](https://github.com/xgfe/react-native-datepicker)
  
-## Pre-Requisites
+ ## Pre-Requisites
   * [Node](https://nodejs.org/) 4.x or better  
   * [React Native](http://facebook.github.io/react-native/docs/getting-started.html) for development 
   * [Android SDK](http://facebook.github.io/react-native/docs/getting-started.html) for Android development (optional) 
@@ -358,15 +355,20 @@ Reference APK Link: https://drive.google.com/folderview?id=1gZMLtFAaC0FSZbEw0mat
 
 * Navigate to `https:\\ui.<your-cluster-name>.hasura-app.io\#login` in your browser
 
-* Sign-up page
+
+#### Sign-up page
+
 
 ![app screen](https://github.com/aditya-kumbhar/HPDF-T81-PF/blob/master/ReactJS%20+%20Python%20Flask/first.png?raw=true "app screen")
 
-* Signup Success E-mail
+
+#### Signup Success E-mail
+
 
 ![Success Mail](https://github.com/aditya-kumbhar/HPDF-T81-PF/blob/master/ReactJS%20%2B%20Python%20Flask/third.png?raw=true)
 
-* Signup Failure
+#### Signup Failure
+
 
   ![Signup view](https://raw.githubusercontent.com/aditya-kumbhar/HPDF-T81-PF/master/ReactJS%20%2B%20Python%20Flask/second.png "Signup view")
 
