@@ -1,4 +1,4 @@
-# Introduction
+# About
 
 This app consists of a simple sign up form, which registers a user using the Hasura auth api. User data on sign up is stored on the hasura cluster database and also in a google sheet, if the sign up process fails appropriate message is displayed to the user.
 
@@ -89,6 +89,7 @@ For the app to function we need a server that will receive the form data sent by
 
   6. Turn on the Zap.
 
+![zap](https://github.com/aditya-kumbhar/HPDF-T81-PF/blob/master/ReactJS%20%2B%20Python%20Flask/zap.jpeg?raw=true)
 
 ### Step 2 - Modify server code
     
@@ -107,7 +108,6 @@ def signup():
 ``` 
 
 * Data URL
-
 
 ```sh
     url = "https://data.asthmatic70.hasura-app.io/v1/query"
@@ -129,60 +129,13 @@ Commit the changes and push the commit to deploy your project to your cluster.
 `git push hasura master`
 
 
+
 # Tutorial: React
 
-Follow along for a step by step guide on developing this app
 
-## Getting started
-
-### Step 1 - Install create-react-app
-
-```sh
-$ npm install -g create-react-app
-```
-
-The above command will install create-react-app globaly which is a tool to Create React apps with no build configuration.
-
-### Step 2 - Creating a basic project
-
-```sh
-
-
-$ create-react-app my-app
-
-
-$ cd my-app
-
+Folder structure
 
 ```
-
-The above command does the following:
-
-1. Creates a new folder in the current working directory called `my-app`
-
-
-2. Populate the directory with the required files to get started with a react app
-
-### Step 3 - Installing the Ant Design Framework
-
-```sh
-
-
-$ npm install antd --save
-
-
-```
-
-This command will install ant design and save it to the `package.json` file.
-
-### Step 4 - Configuring the project
-
-To use some advance features provided by the ant design we need to configure it a bit, follow the official guide https:\u002F\u002Fant.design\u002Fdocs\u002Freact\u002Fuse-with-create-react-app
-
-### Step 5 - Folder structure
-
-```
-
 
 my-app
 
@@ -288,13 +241,12 @@ my-app
 
                 └── Hoem.css
 
-
 ```
 
-* assets contains the required files like css reset, images used in the project etc.
+* `assets` contains the required files like css reset, images used in the project etc.
 
 
-* component directory contains the layout and other components of the app
+* `component` directory contains the layout and other components of the app
 
 
 * `Layout.js` define the structure of the web page
@@ -305,10 +257,52 @@ my-app
 
 * `Signup.js` is the signup form 
 
-  ![Signup view](https://raw.githubusercontent.com/aditya-kumbhar/HPDF-T81-PF/master/ReactJS%20%2B%20Python%20Flask/second.png "Signup view")
 
+Follow along for a step by step guide on developing this app
+
+## Getting started
+
+### Step 1 -  Getting the node modules
+
+Head over to `microservices\ui\app` directory and execute the following command.
+
+$ npm start
+
+The above command will download all the required node modules for running the project.
+The modules used in this project are as follows :
+1. Axios (For handling requests)
+2. AntD (For User Interface)
+3. React Modules
+
+### Step 2 -  Sending POST requests
+
+In order to change the POST request URL, go to the following directory and open the "Signup.js" file.
+
+`microservices\ui\app\src\components\sections\form\Signup.js`
+
+Inside this file, look at the 20th line which calls the axios post function. The POST url must be placed inside this function. You may change this according to your endpoint link.
+
+### Step 3 - Installing the Ant Design Framework (optional)
+
+```sh
+
+
+$ npm install antd --save
+
+
+```
+
+This command will install ant design and save it to the `package.json` file.
+
+### Step 4 -  Configuring some extra features (optional)
+
+To use some advance features provided by the ant design we need to configure it a bit, follow the official guide https://ant.design/docs/react/use-with-create-react-app
+
+ 
 
 # Tutorial: React-Native
+
+Reference APK Link: https://drive.google.com/folderview?id=1gZMLtFAaC0FSZbEw0matEdg8ku9nIC
 
 
 ## Dependencies
@@ -316,14 +310,14 @@ my-app
   * [NativeBase for UI Elements](https://github.com/GeekyAnts/NativeBase)
   * [React Native Datepicker](https://github.com/xgfe/react-native-datepicker)
  
- ## Pre-Requisites
+## Pre-Requisites
   * [Node](https://nodejs.org/) 4.x or better  
   * [React Native](http://facebook.github.io/react-native/docs/getting-started.html) for development 
   * [Android SDK](http://facebook.github.io/react-native/docs/getting-started.html) for Android development (optional) 
   * [Android Lollipop](https://www.android.com/versions/lollipop-5-0/) or better for Android device testing (optional) 
   * [Hasura cli](https://docs.hasura.io/0.15/manual/install-hasura-cli.html)
   
- ## Getting Started 
+## Getting Started 
   #### 1. Open Command Prompt or gitbash and install these commands   
       >> npm install -g npm@4.6.1
 
@@ -345,13 +339,17 @@ my-app
        >> npm install react-native-datepicker --save
       
        >> react-native link
+
+  #### 3. Post data to your own Hasura cluster (optional)
+         >> open ReactNative/Zapier/Zap.js
+         >> Replace CLUSTER_NAME with your own hasura cluster from 
+            const DBUrl ="https://app.CLUSTER_NAME.hasura-app.io/signup"
+
        
-  ## Running
+## Running
    ####  Run app in Android device(enable USB Debugging First) or emulator   
          'react-native run-android'
-  
 
- 
 
 
 # In Action!
@@ -360,11 +358,39 @@ my-app
 
 * Navigate to `https:\\ui.<your-cluster-name>.hasura-app.io\#login` in your browser
 
+* Sign-up page
 
 ![app screen](https://github.com/aditya-kumbhar/HPDF-T81-PF/blob/master/ReactJS%20+%20Python%20Flask/first.png?raw=true "app screen")
+
+* Signup Success E-mail
+
+![Success Mail](https://github.com/aditya-kumbhar/HPDF-T81-PF/blob/master/ReactJS%20%2B%20Python%20Flask/third.png?raw=true)
+
+* Signup Failure
+
+  ![Signup view](https://raw.githubusercontent.com/aditya-kumbhar/HPDF-T81-PF/master/ReactJS%20%2B%20Python%20Flask/second.png "Signup view")
 
 
 ### React-Native Front-end
 
 ![Alt Text](https://i.imgflip.com/23tmt4.gif)
 ![Alt Text](https://i.imgflip.com/23tn9u.gif) 
+
+# Contributors
+
+* Hrushikesh Akhade (React-Native)
+  * [Facebook](https://www.facebook.com/hrishi.akhade) 
+  * [LinkedIn](https://www.linkedin.com/in/hrushikesh-akhade-323102128) 
+  * [Github](https://github.com/hrishiakhade)
+
+* Rahul Suresh (React) 
+  * [Facebook](https://www.facebook.com/fireblaze15)
+  * [LinkedIn](https://linkedin.com/in/rahulsuresh98) 
+  * [Github](https://github.com/RahulSuresh-GIT)
+
+* Aditya Kumbhar (Python-Flask) 
+  * [Facebook](https://www.facebook.com/aditya.kumbhar.1485) 
+  * [LinkedIn](https://www.linkedin.com/in/aditya-kumbhar) 
+  * [Github](https://www.github.com/aditya-kumbhar)
+
+* Jitendar Kumar (React-Native)
