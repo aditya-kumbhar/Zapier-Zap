@@ -265,13 +265,16 @@ Follow along for a step by step guide on developing this app
 
 Head over to `microservices\ui\app` directory and execute the following command.
 
-$ npm start
+`$ npm start`
 
 The above command will download all the required node modules for running the project.
 The modules used in this project are as follows :
-1. Axios (For handling requests)
-2. AntD (For User Interface)
-3. React Modules
+
+ 1. Axios (For handling requests)
+
+ 2. AntD (For User Interface)
+ 
+ 3. React Modules
 
 ### Step 2 -  Sending POST requests
 
