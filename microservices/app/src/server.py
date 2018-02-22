@@ -55,7 +55,6 @@ def signup():
                         "birthdate" :birthdate ,
                         "hasura_id" :hasura_id ,
                         "username" :username ,
-                        "password" :password ,
                         "email" :email ,
                         "mobile" :mobile ,
                         "city" :city
